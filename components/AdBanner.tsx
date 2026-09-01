@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AD_SLOTS } from "@/lib/adSlots";
 import { ADSENSE_CLIENT } from "@/lib/site";
 
 type Variant = "banner" | "sidebar" | "quiz";
@@ -60,8 +59,6 @@ export default function AdBanner({ slotId, variant, className = "" }: AdBannerPr
     );
   }
 
-  const isInArticle = slotId === AD_SLOTS.quiz_between;
-
   return (
     <div
       style={
@@ -74,13 +71,11 @@ export default function AdBanner({ slotId, variant, className = "" }: AdBannerPr
       <ins
         ref={insRef}
         className="adsbygoogle"
-        style={{ display: "block", textAlign: isInArticle ? "center" : undefined }}
+        style={{ display: "block" }}
         data-ad-client={ADSENSE_CLIENT}
         data-ad-slot={slotId}
-        data-ad-format={isInArticle ? "fluid" : "auto"}
-        {...(isInArticle
-          ? { "data-ad-layout": "in-article" }
-          : { "data-full-width-responsive": "true" })}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
       />
     </div>
   );
