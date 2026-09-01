@@ -5,7 +5,9 @@ import AdBanner from "@/components/AdBanner";
 import AdSlot from "@/components/AdSlot";
 import { AD_SLOTS } from "@/lib/adSlots";
 import { hskLevels, hskStages, hsk1Words, hsk1Grammar } from "@/data/hsk";
+import { hskStudyPlans } from "@/data/hskStudy";
 import WordList from "@/components/WordList";
+import StudyPlan from "@/components/StudyPlan";
 
 export const metadata: Metadata = {
   title: "HSK 1급~9급 완전 가이드 — 급수별 단어 수와 난이도",
@@ -195,6 +197,10 @@ export default function HskPage() {
           </section>
 
           <AdSlot type="inArticle" />
+
+          <StudyPlan plan={hskStudyPlans["1"]} levelLabel="HSK 1급" />
+
+          <AdBanner slotId={AD_SLOTS.home_top} variant="banner" />
 
           {/* HSK 1급 단어 */}
           <section>

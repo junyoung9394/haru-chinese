@@ -5,8 +5,10 @@ import AppDownloadCta from "@/components/AppDownloadCta";
 import AdBanner from "@/components/AdBanner";
 import AdSlot from "@/components/AdSlot";
 import WordList from "@/components/WordList";
+import StudyPlan from "@/components/StudyPlan";
 import { AD_SLOTS } from "@/lib/adSlots";
 import { hskLevels } from "@/data/hsk";
+import { hskStudyPlans } from "@/data/hskStudy";
 import { BASE_URL } from "@/lib/site";
 
 type Props = { params: Promise<{ level: string }> };
@@ -28,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!info) return {};
   return {
     title: `${info.label} 단어와 문법 — ${info.vocab30}`,
-    description: `${info.label}은 HSK 3.0 기준 ${info.vocab30}, 한자 ${info.hanzi30} 수준입니다. ${info.description} 주제별 필수 단어와 핵심 문법을 예문·병음과 함께 정리했습니다.`,
+    description: `${info.label}은 HSK 3.0 기준 ${info.vocab30}, 한자 ${info.hanzi30} 수준입니다. 학습 기간 ${hskStudyPlans[info.id].duration}, 무엇부터 해야 하는지, 어디서 막히는지와 함께 주제별 필수 단어와 핵심 문법을 정리했습니다.`,
     alternates: { canonical: `${BASE_URL}${info.href}` },
   };
 }
@@ -120,6 +122,10 @@ export default async function HskLevelPage({ params }: Props) {
           )}
 
           <AdBanner slotId={AD_SLOTS.content_mid} variant="banner" />
+
+          <StudyPlan plan={hskStudyPlans[info.id]} levelLabel={info.label} />
+
+          <AdSlot type="inArticle" />
 
           <section>
             <h2 className="text-lg font-bold text-gray-800 mb-1">{info.label} 필수 단어</h2>
