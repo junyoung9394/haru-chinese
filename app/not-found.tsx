@@ -9,6 +9,7 @@ const links = [
   { href: "/basic", label: "기본 소통" },
   { href: "/business", label: "비즈니스 중국어" },
   { href: "/hsk", label: "HSK 시험" },
+  { href: "/hsk/7-9", label: "HSK 7~9급" },
   { href: "/tsc", label: "TSC 시험" },
   { href: "/culture", label: "중국 문화" },
   { href: "/quiz", label: "퀴즈" },

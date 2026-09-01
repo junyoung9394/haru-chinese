@@ -20,6 +20,7 @@ export default function Footer() {
               <li><Link href="/vocabulary" className="hover:text-red-600 transition-colors">기초 단어</Link></li>
               <li><Link href="/hanzi" className="hover:text-red-600 transition-colors">기초 한자</Link></li>
               <li><Link href="/hsk" className="hover:text-red-600 transition-colors">HSK 시험</Link></li>
+              <li><Link href="/hsk/7-9" className="hover:text-red-600 transition-colors">HSK 7~9급</Link></li>
               <li><Link href="/tsc" className="hover:text-red-600 transition-colors">TSC 말하기 시험</Link></li>
               <li><Link href="/travel" className="hover:text-red-600 transition-colors">여행 중국어</Link></li>
               <li><Link href="/basic" className="hover:text-red-600 transition-colors">기본 소통 중국어</Link></li>

@@ -38,7 +38,7 @@ const categories = [
     href: "/hsk",
     icon: "HSK",
     title: "HSK 1급 기초",
-    description: "HSK 급수 체계와 1급 단어·문법으로 중국어 기초를 다져보세요.",
+    description: "1급부터 9급까지 급수 체계와 1급 단어·문법으로 기초를 다져보세요.",
     color: "bg-amber-50 border-amber-200",
     iconColor: "text-amber-700",
   },

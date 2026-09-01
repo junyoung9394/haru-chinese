@@ -16,10 +16,11 @@ const navItems: NavItem[] = [
     dropdown: [
       { href: "/hsk", label: "HSK 시험", subtitle: "汉语水平考试" },
       { href: "/tsc", label: "TSC 말하기", subtitle: "口语考试" },
-      { href: "/hsk/3", label: "HSK 3급 학습", subtitle: "初中级 3级" },
-      { href: "/hsk/4", label: "HSK 4급 학습", subtitle: "中级 4级" },
-      { href: "/hsk/5", label: "HSK 5급 학습", subtitle: "中高级 5级" },
-      { href: "/hsk/6", label: "HSK 6급 학습", subtitle: "高级 6级" },
+      { href: "/hsk/3", label: "HSK 3급 학습", subtitle: "初等 3级" },
+      { href: "/hsk/4", label: "HSK 4급 학습", subtitle: "中等 4级" },
+      { href: "/hsk/5", label: "HSK 5급 학습", subtitle: "中等 5级" },
+      { href: "/hsk/6", label: "HSK 6급 학습", subtitle: "中等 6级" },
+      { href: "/hsk/7-9", label: "HSK 7~9급 학습", subtitle: "高等 7-9级" },
     ],
   },
   {
