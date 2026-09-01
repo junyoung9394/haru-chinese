@@ -56,7 +56,7 @@ npm run lint
 ## 배포 전 체크리스트
 
 - [ ] Vercel 프로젝트 생성 후 `chinese.luckygrampus.com` 도메인 연결
-- [ ] AdSense에 `chinese.luckygrampus.com` 사이트 추가 (승인 전까지 광고 미노출)
+- [x] AdSense — 루트 도메인 `luckygrampus.com` 이 이미 승인 상태라 서브도메인은 별도 등록 불필요. `ads.txt` 도 루트 것을 그대로 사용합니다.
 - [ ] Google Search Console에 등록하고 `sitemap.xml` 제출
 - [ ] 네이버 서치어드바이저 등록 후 `app/layout.tsx` 의 인증 태그 TODO 채우기
 - [ ] Play 스토어 유입 확인 (`utm_source=cn-site`)
