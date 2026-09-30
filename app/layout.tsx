@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
@@ -98,8 +99,7 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${geistSans.variable} h-full`}>
       <head>
-        {/* TODO: 네이버 서치어드바이저에 chinese.luckygrampus.com 등록 후 인증 태그 추가
-            <meta name="naver-site-verification" content="..." /> */}
+        <meta name="naver-site-verification" content="ae72a0008a0a09620f33057a4cb40c619177bb01" />
         <script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
@@ -114,6 +114,8 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+      <Script src="/site-analytics.js" strategy="afterInteractive" />
+        <div className="text-center text-xs py-3"><a href="/analytics-info.html">방문 통계 안내·설정</a></div>
       </body>
     </html>
   );

@@ -1,13 +1,9 @@
 /**
  * HSK 데이터.
  *
- * HSK 는 지금 두 체계가 공존합니다.
- * - HSK 2.0 : 1~6급. 2026년 현재 실제로 응시하는 시험입니다.
- * - HSK 3.0 : 2021년 제정된 「국제 중국어 교육 중국어 수준 등급 표준」.
- *             三等九级(초등 1~3 / 중등 4~6 / 고등 7~9) 체계이며,
- *             고등은 급수별 시험이 아니라 하나의 시험으로 7·8·9급을 판정합니다.
- *
- * 아래 급수 정보에는 두 체계를 함께 담았습니다.
+ * 기존 HSK 2.0, 2021년 중국어 수준 등급 표준, 새 HSK 3.0 시험 대강을 구분합니다.
+ * vocab30은 새 시험 대강, standardVocab2021과 standardHanzi2021은 2021년 등급 표준입니다.
+ * 시험 시간과 합격선은 1~6급에서 기존 2.0 기준입니다.
  */
 
 export type HskLevelId = "1" | "2" | "3" | "4" | "5" | "6" | "7-9";
@@ -150,7 +146,7 @@ export const hsk1Grammar: HskGrammar[] = [
   },
   {
     pattern: "没(有) + 동사",
-    meaning: "~하지 않았다 (과거 부정)",
+    meaning: "동작의 발생·완료를 부정 (문맥에 따라 과거·현재)",
     example: "我没去学校。",
     examplePinyin: "Wǒ méi qù xuéxiào.",
     exampleMeaning: "저는 학교에 가지 않았습니다.",
@@ -962,11 +958,12 @@ export type HskLevelInfo = {
   href: string;
   label: string;
   stage: HskStage;
-  /** HSK 3.0 표준의 누적 어휘 */
+  /** 새 HSK 3.0 시험 대강의 누적 어휘 */
   vocab30: string;
-  /** HSK 3.0 표준의 누적 한자(읽기) */
-  hanzi30: string;
-  /** HSK 2.0 기준 어휘. 2026년 현재 실제 응시하는 시험의 기준입니다. */
+  /** 2021년 등급 표준의 누적 어휘와 한자: 시험 대강과 다름 */
+  standardVocab2021: string;
+  standardHanzi2021: string;
+  /** 기존 HSK 2.0 시험 대강의 누적 어휘. */
   vocab20: string;
   target: string;
   /** HSK 2.0 시험 기준 */
@@ -986,14 +983,15 @@ export const hskLevels: HskLevelInfo[] = [
     href: "/hsk",
     label: "HSK 1급",
     stage: "초등",
-    vocab30: "500단어",
-    hanzi30: "300자",
+    vocab30: "300단어",
+    standardVocab2021: "500단어",
+    standardHanzi2021: "300자",
     vocab20: "150단어",
     target: "입문 — 인사와 자기소개",
     passLine: "120점 / 200점",
     duration: "약 40분",
     description:
-      "모든 문제에 병음이 함께 나오는 유일한 급수입니다. 인사, 숫자, 날짜, 가족처럼 생존에 필요한 표현만 다룹니다.",
+      "기존 HSK 1·2급은 문제에 병음이 함께 제공됩니다. 인사, 숫자, 날짜, 가족처럼 생존에 필요한 표현만 다룹니다.",
     focus: "병음과 성조를 정확히 읽는 것. 여기서 발음 습관이 굳어집니다.",
     color: "bg-red-50 border-red-200 text-red-700",
     words: hsk1Words,
@@ -1004,14 +1002,15 @@ export const hskLevels: HskLevelInfo[] = [
     href: "/hsk/2",
     label: "HSK 2급",
     stage: "초등",
-    vocab30: "1,272단어",
-    hanzi30: "600자",
+    vocab30: "500단어",
+    standardVocab2021: "1,272단어",
+    standardHanzi2021: "600자",
     vocab20: "300단어",
     target: "기초 — 일상 대화",
     passLine: "120점 / 200점",
     duration: "약 55분",
     description:
-      "쇼핑, 길 찾기, 식당 주문 같은 일상 상황을 다룹니다. 了·过 같은 기초 시제 표현이 등장합니다.",
+      "쇼핑, 길 찾기, 식당 주문 같은 일상 상황을 다룹니다. 완료·변화를 나타내는 了와 경험을 나타내는 过 등을 익힙니다.",
     focus: "了와 过의 구분. 한국어에 대응이 없어 처음 막히는 지점입니다.",
     color: "bg-orange-50 border-orange-200 text-orange-700",
     words: hsk2Words,
@@ -1022,8 +1021,9 @@ export const hskLevels: HskLevelInfo[] = [
     href: "/hsk/3",
     label: "HSK 3급",
     stage: "초등",
-    vocab30: "2,245단어",
-    hanzi30: "900자",
+    vocab30: "1,000단어",
+    standardVocab2021: "2,245단어",
+    standardHanzi2021: "900자",
     vocab20: "600단어",
     target: "초중급 — 중국 생활 가능",
     passLine: "180점 / 300점",
@@ -1040,8 +1040,9 @@ export const hskLevels: HskLevelInfo[] = [
     href: "/hsk/4",
     label: "HSK 4급",
     stage: "중등",
-    vocab30: "3,245단어",
-    hanzi30: "1,200자",
+    vocab30: "2,000단어",
+    standardVocab2021: "3,245단어",
+    standardHanzi2021: "1,200자",
     vocab20: "1,200단어",
     target: "중급 — 취업·교환학생 기준선",
     passLine: "180점 / 300점",
@@ -1058,8 +1059,9 @@ export const hskLevels: HskLevelInfo[] = [
     href: "/hsk/5",
     label: "HSK 5급",
     stage: "중등",
-    vocab30: "4,316단어",
-    hanzi30: "1,500자",
+    vocab30: "3,600단어",
+    standardVocab2021: "4,316단어",
+    standardHanzi2021: "1,500자",
     vocab20: "2,500단어",
     target: "중상급 — 신문·드라마 이해",
     passLine: "180점 / 300점",
@@ -1076,14 +1078,15 @@ export const hskLevels: HskLevelInfo[] = [
     href: "/hsk/6",
     label: "HSK 6급",
     stage: "중등",
-    vocab30: "5,456단어",
-    hanzi30: "1,800자",
+    vocab30: "5,400단어",
+    standardVocab2021: "5,456단어",
+    standardHanzi2021: "1,800자",
     vocab20: "5,000단어 이상",
-    target: "고급 — 원어민 수준 문어체",
+    target: "고급 — 복잡한 문어체 이해",
     passLine: "180점 / 300점",
     duration: "약 140분",
     description:
-      "성어와 문어체 표현이 대량으로 나옵니다. 쓰기는 1,000자 지문을 읽고 400자로 요약하는 형식입니다.",
+      "성어와 문어체 표현이 대량으로 나옵니다. 기존 HSK 2.0의 6급 쓰기는 약 1,000자 지문을 읽고 약 400자로 요약하는 형식입니다.",
     focus: "성어와 유의어 변별. 뜻이 비슷한 단어 중 하나만 정답인 문제가 많습니다.",
     color: "bg-violet-50 border-violet-200 text-violet-700",
     words: hsk6Words,
@@ -1095,7 +1098,8 @@ export const hskLevels: HskLevelInfo[] = [
     label: "HSK 7~9급",
     stage: "고등",
     vocab30: "11,000단어",
-    hanzi30: "3,000자",
+    standardVocab2021: "11,092단어",
+    standardHanzi2021: "3,000자",
     vocab20: "해당 없음 (3.0 신설)",
     target: "최상급 — 학술·전문 영역",
     passLine: "점수에 따라 7·8·9급 판정",

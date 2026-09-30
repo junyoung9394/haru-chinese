@@ -31,14 +31,14 @@ const examParts = [
   },
   {
     part: "말하기 · 번역",
-    body: "7~9급에서만 평가합니다. 1~6급에서는 말하기가 HSKK라는 별도 시험으로 분리되어 있습니다.",
+    body: "7~9급은 말하기와 번역을 함께 평가합니다. 기존 2.0의 1~6급 말하기는 HSKK로 분리되어 있으며, 새 3.0의 3~6급은 급수별 말하기 시험을 함께 확인해야 합니다.",
   },
 ];
 
 const faqs = [
   {
     q: "지금 신청하면 HSK 2.0인가요, 3.0인가요?",
-    a: "2026년 9월 현재 1~6급 정규 시험은 대체로 기존 2.0 기준으로 시행되고 있고, 3.0 정식 전환은 별도 공지 예정입니다. 다만 시행 기관 공지가 수시로 바뀌므로 접수 전에 응시일 기준 공지를 반드시 직접 확인하세요.",
+    a: "2026년 9월 30일 확인 기준, 새 HSK 3.0은 2026년 12월 13일 정식 시행 예정으로 안내되어 있습니다. 접수 전에 국내 시행처에서 응시일·시험장별 적용 버전과 구성을 확인하세요.",
   },
   {
     q: "HSK 몇 급부터 따는 게 좋을까요?",
@@ -80,34 +80,40 @@ export default function HskPage() {
             </p>
           </section>
 
-          {/* 2.0 vs 3.0 */}
           <section className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
-            <h2 className="text-lg font-bold text-gray-800 mb-2">
-              먼저 알아야 할 것 — HSK는 지금 두 체계가 공존합니다
-            </h2>
+            <h2 className="text-lg font-bold text-gray-800 mb-2">HSK 시험 대강과 2021년 등급 표준 구분하기</h2>
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
-              HSK를 처음 알아볼 때 가장 헷갈리는 지점입니다. 검색하면 &ldquo;1~6급&rdquo;이라는 설명과
-              &ldquo;1~9급&rdquo;이라는 설명이 동시에 나오는데, 둘 다 맞습니다. 서로 다른 기준을 말하는 것입니다.
+              기존 HSK 2.0 시험, 2021년 중국어 수준 등급 표준, 새 HSK 3.0 시험 대강은 서로 다른 기준입니다.
+              2021년 표준은 교육·평가의 기준이며, 그 어휘 수가 새 시험의 출제 범위와 같지는 않습니다.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white rounded-xl p-5 border border-amber-100">
-                <p className="font-bold text-amber-700 mb-1">HSK 2.0 — 1~6급</p>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  오랫동안 시행되어 온 기존 체계입니다. 시중 교재와 기출문제 대부분이 이 기준이고,
-                  <strong> 2026년 현재 실제로 응시하는 1~6급 시험도 대체로 이 기준</strong>입니다.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-5 border border-slate-200">
-                <p className="font-bold text-slate-700 mb-1">HSK 3.0 — 1~9급 (三等九级)</p>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  2021년 제정된 새 국가 표준입니다. 3등급 9단계로 나뉘고 <strong>7~9급 고등 단계가 신설</strong>되었습니다.
-                  요구 어휘량이 전반적으로 크게 늘었습니다.
-                </p>
-              </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm text-left bg-white rounded-xl">
+                <caption className="text-left text-gray-700 font-semibold pb-2">급수별 누적 어휘 비교</caption>
+                <thead><tr className="border-b border-amber-200">
+                  <th scope="col" className="p-3">급수</th>
+                  <th scope="col" className="p-3">기존 HSK 2.0</th>
+                  <th scope="col" className="p-3">2021년 등급 표준</th>
+                  <th scope="col" className="p-3">새 HSK 3.0 시험 대강</th>
+                </tr></thead>
+                <tbody>{hskLevels.map((lv) => (
+                  <tr key={lv.id} className="border-b border-gray-100">
+                    <th scope="row" className="p-3 whitespace-nowrap">{lv.label}</th>
+                    <td className="p-3">{lv.vocab20}</td>
+                    <td className="p-3">{lv.standardVocab2021}</td>
+                    <td className="p-3 font-semibold">{lv.vocab30}</td>
+                  </tr>
+                ))}</tbody>
+              </table>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed mt-4">
-              전환 일정은 시행 기관 공지에 따라 바뀝니다. <strong>접수 전에 응시일 기준 공지를 직접 확인하세요.</strong>{" "}
-              학습 자체는 어느 쪽이든 크게 달라지지 않습니다. 단어와 문법을 쌓는 순서는 같고, 3.0은 같은 급수에서 요구하는 양이 더 많을 뿐입니다.
+              2026년 9월 30일 확인: 새 HSK 3.0의 정식 시행 예정일은 2026년 12월 13일로 안내되어 있습니다.
+              국내 접수 가능 여부와 적용 버전은 응시일·시험장별 시행처 공지를 확인하세요.
+              어휘 수뿐 아니라 시험 구성과 문항 유형도 해당 버전의 대강·샘플 문제로 확인해야 합니다.
+            </p>
+            <p className="text-sm text-red-700 mt-3 flex flex-wrap gap-x-4 gap-y-2">
+              <a href="https://www.chinesetest.cn/syllabus" className="underline">공식 시험 대강</a>
+              <a href="https://www.hssonline.cn/zh/article/152665539/" className="underline">등급 표준과 시험 대강 비교 해설</a>
+              <a href="https://www.csust.edu.cn/gjxy/info/1308/8485.htm" className="underline">정식 시행 일정 안내</a>
             </p>
           </section>
 
@@ -135,7 +141,7 @@ export default function HskPage() {
           <section>
             <h2 className="text-lg font-bold text-gray-800 mb-1">급수별 한눈에 보기</h2>
             <p className="text-sm text-gray-500 mb-4">
-              어휘·한자는 HSK 3.0 표준 누적 기준이고, 괄호 안은 기존 2.0 기준입니다. 급수를 누르면 단어와 문법으로 들어갑니다.
+              어휘는 새 HSK 3.0 시험 대강 기준이며 기존 2.0 어휘를 함께 표시했습니다. 학습 예시는 선별 자료로, 공식 전체 어휘 목록은 위 시험 대강에서 확인하세요.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {hskLevels.map((lv) => (
@@ -154,19 +160,19 @@ export default function HskPage() {
                   <p className="text-sm font-semibold text-gray-800 mb-1">{lv.target}</p>
                   <p className="text-sm text-gray-600 leading-relaxed">{lv.description}</p>
                   <p className="text-xs text-gray-500 mt-3">
-                    한자 {lv.hanzi30} · {lv.passLine} · {lv.duration}
+                    2021년 등급 표준 한자: {lv.standardHanzi2021} (시험 대강과 별도)
                   </p>
                 </Link>
               ))}
             </div>
             <p className="text-xs text-gray-400 mt-3">
-              * 합격선과 시험 시간은 HSK 2.0 기준입니다. 시행 기관 공지에 따라 달라질 수 있습니다.
+              * 시험 구성 설명과 1~6급 상세 페이지의 시간은 기존 HSK 2.0 기준입니다. 새 HSK 3.0은 공식 대강과 응시 공지를 확인하세요.
             </p>
           </section>
 
           {/* 시험 구성 */}
           <section>
-            <h2 className="text-lg font-bold text-gray-800 mb-4">시험 영역 구성</h2>
+            <h2 className="text-lg font-bold text-gray-800 mb-4">시험 영역 구성 — 기존 2.0과 7~9급</h2>
             <div className="space-y-3">
               {examParts.map((p) => (
                 <div key={p.part} className="bg-white border border-gray-200 rounded-xl p-5">

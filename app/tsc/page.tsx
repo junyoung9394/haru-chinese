@@ -27,7 +27,7 @@ const levels = [
   { grade: "3급", label: "초급", desc: "익숙한 주제에 대해 짧은 문장으로 답할 수 있습니다." },
   { grade: "4급", label: "중급", desc: "일상 대화가 가능한 수준. 채용 우대 요건으로 자주 등장합니다." },
   { grade: "5급", label: "중상급", desc: "의견을 논리적으로 전개할 수 있습니다. 중국어 직무 지원 기준선." },
-  { grade: "6~7급", label: "고급", desc: "복잡한 주제도 유창하게 다룹니다. 통역·주재원 수준." },
+  { grade: "6~7급", label: "고급", desc: "복잡한 주제도 유창하게 다룹니다. 업무 수행에 필요한 수준은 직무와 기관별 요건에 따라 다릅니다." },
 ];
 
 const tips = [
@@ -60,7 +60,7 @@ export default function TscPage() {
               <div className="bg-white rounded-xl p-4 border border-red-100">
                 <p className="font-bold text-red-600 mb-1">HSK</p>
                 <p className="text-gray-600 leading-relaxed">
-                  듣기·독해·쓰기를 평가합니다. 급수(1~6급)로 결과가 나오며 어휘량이 곧 점수로 이어집니다.
+                  기존 HSK 1~6급은 듣기·독해와 3급 이상의 쓰기를 평가하며 어휘뿐 아니라 영역별 이해와 표현 능력이 필요합니다.
                 </p>
               </div>
               <div className="bg-white rounded-xl p-4 border border-amber-100">
@@ -98,7 +98,7 @@ export default function TscPage() {
           <AdSlot type="inArticle" />
 
           <section>
-            <h2 className="text-lg font-bold text-gray-800 mb-4">등급 체계</h2>
+            <h2 className="text-lg font-bold text-gray-800 mb-4">주요 등급 안내 (1~7급 발췌)</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {levels.map((lv) => (
                 <div key={lv.grade} className="bg-white border border-gray-200 rounded-xl p-4">

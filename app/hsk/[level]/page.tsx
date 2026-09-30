@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!info) return {};
   return {
     title: `${info.label} 단어와 문법 — ${info.vocab30}`,
-    description: `${info.label}은 HSK 3.0 기준 ${info.vocab30}, 한자 ${info.hanzi30} 수준입니다. 학습 기간 ${hskStudyPlans[info.id].duration}, 무엇부터 해야 하는지, 어디서 막히는지와 함께 주제별 필수 단어와 핵심 문법을 정리했습니다.`,
+    description: `${info.label}의 새 HSK 3.0 시험 대강 누적 어휘는 ${info.vocab30}입니다. 학습 기간 ${hskStudyPlans[info.id].duration}, 무엇부터 해야 하는지, 어디서 막히는지와 함께 주제별 필수 단어와 핵심 문법을 정리했습니다.`,
     alternates: { canonical: `${BASE_URL}${info.href}` },
   };
 }
@@ -66,22 +66,24 @@ export default async function HskLevelPage({ params }: Props) {
 
             <div className={`mt-5 border rounded-2xl p-5 grid grid-cols-2 sm:grid-cols-4 gap-4 ${info.color}`}>
               <div>
-                <p className="text-xs text-gray-500 mb-1">누적 어휘 (3.0)</p>
+                <p className="text-xs text-gray-500 mb-1">누적 어휘 (새 시험 대강)</p>
                 <p className="font-bold">{info.vocab30}</p>
               </div>
               <div>
-                <p className="text-xs text-gray-500 mb-1">누적 한자 (3.0)</p>
-                <p className="font-bold">{info.hanzi30}</p>
+                <p className="text-xs text-gray-500 mb-1">누적 한자 (2021년 등급 표준)</p>
+                <p className="font-bold">{info.standardHanzi2021}</p>
               </div>
               <div>
                 <p className="text-xs text-gray-500 mb-1">기존 2.0 기준</p>
                 <p className="font-bold text-sm">{info.vocab20}</p>
               </div>
               <div>
-                <p className="text-xs text-gray-500 mb-1">시험 시간</p>
+                <p className="text-xs text-gray-500 mb-1">{isAdvanced ? "7~9급 시험 시간" : "시험 시간 (기존 2.0)"}</p>
                 <p className="font-bold text-sm">{info.duration}</p>
               </div>
             </div>
+
+            <p className="mt-3 text-xs text-gray-500 leading-relaxed">2021년 등급 표준의 한자 수는 새 시험 대강과 별도 기준입니다. 이 페이지의 단어·문법은 선별 학습 자료이며 공식 전체 출제 목록이 아닙니다. <Link href="/hsk" className="text-red-600 underline">기준 비교와 공식 출처 보기</Link></p>
 
             <div className="mt-4 bg-white border border-gray-200 rounded-2xl p-5">
               <p className="text-sm font-semibold text-gray-700 mb-1">이 급수에서 진짜 넘어야 하는 벽</p>
@@ -102,7 +104,7 @@ export default async function HskLevelPage({ params }: Props) {
                 <li className="flex gap-2">
                   <span className="text-slate-500 mt-0.5">•</span>
                   <span>
-                    듣기·읽기·쓰기에 더해 <strong>말하기와 번역까지</strong> 평가합니다. 1~6급과 달리 말하기가 별도 시험(HSKK)으로 분리되어 있지 않습니다.
+                    듣기·읽기·쓰기에 더해 <strong>말하기와 번역까지</strong> 평가합니다. 기존 2.0의 별도 말하기 시험(HSKK)과 구분되며, 7~9급 통합 시험 안에서 평가합니다.
                   </span>
                 </li>
                 <li className="flex gap-2">

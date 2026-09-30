@@ -113,7 +113,7 @@ const groups: Group[] = [
   {
     icon: "🏃",
     title: "기본 동사",
-    note: "중국어는 동사가 변형되지 않습니다. 시제는 了·过 같은 조사로 표현합니다.",
+    note: "중국어 동사는 시제에 따라 형태가 바뀌지 않습니다. 시간은 시간 표현과 문맥으로 나타내며, 了는 완료·변화, 过는 경험 등을 나타냅니다.",
     words: [
       { word: "是", pinyin: "shì", meaning: "~이다" },
       { word: "有", pinyin: "yǒu", meaning: "있다" },

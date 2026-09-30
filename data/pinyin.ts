@@ -40,7 +40,7 @@ export const initials: PinyinItem[] = [
 /** 단운모 + 복운모 + 비운모 — 음절의 뒷소리 */
 export const finals: PinyinItem[] = [
   { sound: "a", korean: "아", example: "大", pinyin: "dà", meaning: "크다" },
-  { sound: "o", korean: "오", example: "我", pinyin: "wǒ", meaning: "나" },
+  { sound: "o", korean: "오", example: "波", pinyin: "bō", meaning: "물결" },
   { sound: "e", korean: "으어", example: "喝", pinyin: "hē", meaning: "마시다" },
   { sound: "i", korean: "이", example: "七", pinyin: "qī", meaning: "일곱" },
   { sound: "u", korean: "우", example: "书", pinyin: "shū", meaning: "책" },
@@ -179,7 +179,7 @@ export const toneRules: ToneRule[] = [
   },
   {
     title: "반3성",
-    body: "3성 뒤에 1·2·4성이나 경성이 오면 앞 3성은 내려가기만 하고 다시 올라가지 않습니다.",
+    body: "3성 뒤에 1·2·4성이 오면 보통 낮게 내려가며 끝납니다. 경성 앞에서는 단어와 문맥에 따라 달라지므로 실제 발음을 함께 익히세요.",
     example: "老师 lǎoshī — lǎo를 낮게 눌러 끝냅니다",
   },
 ];

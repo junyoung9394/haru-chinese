@@ -4,7 +4,7 @@ import { playStoreUrl } from "@/lib/site";
 const FEATURES = [
   { icon: "📚", title: "HSK 1~9급 단어장", desc: "급수별 단어를 플래시카드로 암기" },
   { icon: "🔁", title: "SRS 간격 반복 복습", desc: "잊을 때쯤 다시 물어보는 복습 알고리즘" },
-  { icon: "🎯", title: "매일 8분 학습 루틴", desc: "짧게 매일 하며 연속 학습 기록 유지" },
+  { icon: "🎯", title: "매일 10분 학습 루틴", desc: "짧게 매일 하며 연속 학습 기록 유지" },
 ];
 
 export default function AppInfoSection() {

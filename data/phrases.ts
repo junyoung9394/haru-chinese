@@ -120,7 +120,7 @@ export const basicSections: PhraseSection[] = [
     title: "자기소개",
     description: "이름, 국적, 직업을 말하고 상대에게 묻는 표현입니다.",
     phrases: [
-      { chinese: "我叫金珉洙。", pinyin: "Wǒ jiào Jīn Mǐnzhū.", meaning: "제 이름은 김민수입니다." },
+      { chinese: "我叫金珉洙。", pinyin: "Wǒ jiào Jīn Mínzhū.", meaning: "제 이름은 김민수입니다." },
       { chinese: "你叫什么名字？", pinyin: "Nǐ jiào shénme míngzi?", meaning: "이름이 뭐예요?" },
       { chinese: "我是韩国人。", pinyin: "Wǒ shì Hánguó rén.", meaning: "저는 한국인입니다." },
       { chinese: "你是哪国人？", pinyin: "Nǐ shì nǎ guó rén?", meaning: "어느 나라 사람이세요?" },

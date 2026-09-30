@@ -147,7 +147,7 @@ export default function Home() {
         <div className="flex items-center justify-between mb-5">
           <div>
             <h2 className="text-xl font-bold text-gray-800">병음 미리보기</h2>
-            <p className="text-sm text-gray-500 mt-1">성모 b~ko — 한국어 근사 발음과 예시 단어를 함께 확인하세요</p>
+            <p className="text-sm text-gray-500 mt-1">성모 b~k — 한국어 근사 발음과 예시 단어를 함께 확인하세요</p>
           </div>
           <Link href="/pinyin" className="text-red-600 text-sm font-medium hover:underline">
             전체 보기 →
@@ -256,7 +256,7 @@ export default function Home() {
           </div>
           <div className="text-center p-4">
             <p className="text-2xl mb-2">🏆</p>
-            <p className="font-semibold text-gray-800 mb-1">매일 8분으로 습관화</p>
+            <p className="font-semibold text-gray-800 mb-1">매일 10분으로 습관화</p>
             <p className="text-sm text-gray-600">짧게 매일 하며 연속 학습 기록을 쌓아갑니다.</p>
           </div>
         </div>

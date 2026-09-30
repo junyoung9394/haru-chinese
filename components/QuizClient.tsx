@@ -38,7 +38,7 @@ const toneItems: QuizItem[] = [
   { display: "tǎng", answer: "3성", hint: "躺 — 눕다" },
   { display: "tàng", answer: "4성", hint: "烫 — 뜨겁다" },
   { display: "jiā", answer: "1성", hint: "家 — 집" },
-  { display: "jiá", answer: "2성", hint: "夹 — 끼우다" },
+  { display: "jiá", answer: "2성", hint: "颊 — 뺨" },
   { display: "jiǎ", answer: "3성", hint: "假 — 가짜" },
   { display: "jià", answer: "4성", hint: "价 — 가격" },
 ];
@@ -70,7 +70,7 @@ const categoryLabels: Record<Category, string> = {
 };
 
 const categoryPrompts: Record<Category, string> = {
-  pinyin: "병음 표기를 보고 가장 가까운 한국어 발음을 골라보세요.",
+  pinyin: "병음 표기를 보고 한국어 근사 발음을 골라보세요. 한글 표기는 참고용이며 실제 중국어 소리와 같지 않습니다.",
   tone: "병음의 성조 부호를 보고 몇 성인지 골라보세요.",
   hsk1: "한국어 뜻을 보고 올바른 중국어 단어를 골라보세요.",
   hsk3: "한국어 뜻을 보고 올바른 중국어 단어를 골라보세요.",

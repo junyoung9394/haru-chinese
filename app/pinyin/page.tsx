@@ -84,7 +84,7 @@ export default function PinyinPage() {
               </div>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed">
-              성모 없이 운모만으로 이루어진 음절도 있습니다(ài 爱, ér 二). 성조는 별도 페이지에서 자세히 다룹니다 —{" "}
+              성모 없이 운모만으로 이루어진 음절도 있습니다(ài 爱, èr 二). 성조는 별도 페이지에서 자세히 다룹니다 —{" "}
               <Link href="/tones" className="text-red-600 font-medium hover:underline">
                 성조 배우러 가기 →
               </Link>
