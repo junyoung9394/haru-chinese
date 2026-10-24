@@ -47,11 +47,10 @@ export default function HanziBanner() {
 
   return (
     <div
-      className="flex items-center justify-between gap-3 rounded-2xl border border-red-200 px-4 py-3 sm:px-6 sm:py-4"
-      style={{ backgroundColor: "#FFF5F5" }}
+      className="flex items-center justify-between gap-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 sm:px-6 sm:py-4"
     >
       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 min-w-0">
-        <p className="font-bold text-gray-800 text-sm sm:text-base whitespace-nowrap">
+        <p className="font-bold text-gray-800 text-sm sm:text-base truncate">
           📱 한자 퀴즈는 앱에서 무제한으로!
         </p>
         <p className="text-gray-500 text-xs sm:text-sm truncate">

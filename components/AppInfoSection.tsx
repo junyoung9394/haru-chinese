@@ -1,4 +1,4 @@
-import Image from "next/image";
+import StoreButton from "@/components/StoreButton";
 import { playStoreUrl } from "@/lib/site";
 
 const FEATURES = [
@@ -9,29 +9,24 @@ const FEATURES = [
 
 export default function AppInfoSection() {
   return (
-    <section className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
-      <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center">
-        더 깊이 공부하고 싶다면 앱을 사용해보세요
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+    <section className="card p-6 sm:p-9">
+      <div className="text-center mb-7">
+        <span className="eyebrow mb-3">하루중국어 앱</span>
+        <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">
+          더 깊이 공부하고 싶다면 앱을 사용해보세요
+        </h2>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
         {FEATURES.map((f) => (
-          <div key={f.title} className="bg-red-50 rounded-xl p-4 text-center">
-            <p className="text-3xl mb-2">{f.icon}</p>
-            <p className="font-semibold text-gray-800 text-sm mb-1">{f.title}</p>
-            <p className="text-gray-500 text-xs">{f.desc}</p>
+          <div key={f.title} className="rounded-2xl bg-gray-100 p-5 text-center">
+            <p className="text-3xl mb-3" aria-hidden="true">{f.icon}</p>
+            <p className="font-bold text-gray-900 text-sm mb-1">{f.title}</p>
+            <p className="text-gray-500 text-xs leading-relaxed">{f.desc}</p>
           </div>
         ))}
       </div>
-      <div className="text-center">
-        <a href={playStoreUrl("app-info")} target="_blank" rel="noopener noreferrer">
-          <Image
-            src="https://play.google.com/intl/ko/badges/images/generic/ko_badge_web_generic.png"
-            alt="Google Play에서 다운로드"
-            width={200}
-            height={56}
-            className="mx-auto hover:opacity-90 transition-opacity"
-          />
-        </a>
+      <div className="flex justify-center">
+        <StoreButton href={playStoreUrl("app-info")} />
       </div>
     </section>
   );
